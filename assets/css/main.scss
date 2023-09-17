@@ -1,0 +1,325 @@
+$color-red-dark: #9C0202;
+$color-red: #FF0000;
+$header-height: 5rem;
+$section-padding: 11.5rem;
+$container-width: 120rem;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color:#000000;
+    color: white;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+* {
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+li, a, p, span, strong {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 6.4rem;
+    font-weight: 800;
+
+    @media(max-width: 991px) {
+        font-size: 3.4rem;
+    }
+}
+
+.section-container {
+    max-width: $container-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media(max-width: 991px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-column {
+        flex-basis: 100%;
+    }
+
+    &.section-column-2 {
+        gap: 3rem;
+        display: flex;
+    }
+}
+
+.red-border-image {
+    padding: .8rem;
+    background: linear-gradient(90deg, #390000 0.17%, #9C0202 50.53%, #450000 99.84%);
+}
+
+header {
+    min-height: $header-height;
+    background-color: rgba(255,255,255,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    padding: 0 1.5rem;
+
+    @media(max-width: 991px) {
+        padding: 0 3rem;
+    }
+
+    .header-container {
+        max-width: $container-width;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-left,
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-right {
+        justify-content: end;
+    }
+
+    .logo {
+        max-height: 3rem;
+
+        @media(max-width: 991px) {
+            max-height: 2rem;
+        }
+    }
+}
+
+nav {
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        list-style: none;
+
+        @media(max-width: 991px) {
+            gap: 1rem;
+        }
+
+        a {
+            color: #333333;
+            font-size: 1.4rem;
+            font-weight: 500;
+
+            @media(max-width: 991px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+section {
+    padding: 0 1.5rem;
+
+    @media(max-width: 991px) {
+        padding: 0 3rem;
+    }
+}
+
+.landing {
+    min-height: calc(100vh - #{$header-height} - 14rem);
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/car-ventilation.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    h1 {
+        color: $color-red;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+        font-weight: 300; 
+        max-width: 60rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+}
+
+#ponuda {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.4rem;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 7rem;
+
+        @media(max-width: 991px) {
+            text-align: left;
+            font-size:1.8rem;
+        }
+    }
+
+    .red-border-image {
+        @media(min-width: 992px) {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.featured-tape {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $color-red-dark;
+}
+
+.featured-container {
+    max-width: $container-width;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+
+    @media(max-width: 991px) {
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 5rem;
+    }
+}
+
+.featured-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 13.8rem;
+    padding: 2rem 0;
+    justify-content: flex-start;
+
+    @media(max-width: 991px) {
+        flex-basis: 50%;
+    }
+
+    span {
+        text-align: center;
+    }
+
+    img {
+        max-height: 4.4rem;
+        margin-bottom: 1.7rem;
+    }
+}
+
+.features-list {
+    h3 {
+        color: #FF0000;
+        font-weight: 700;
+        font-size: 2.4rem;
+        text-transform: uppercase;
+        margin-bottom: 1.4rem;
+    }
+
+    p {
+        line-height: 1.5;
+
+        &:not(:last-child) {
+            margin-bottom: 5.1rem;
+        }
+    }
+}
+
+#kontakt {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/compressor.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    h3 {
+        font-size: 3.2rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        @media(max-width: 991px) {
+            font-size: 2.4rem;
+        }
+    }
+
+    .logo-white {
+        max-width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-bottom: 5rem;
+    }
+}
+
+.contact-items {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+
+    img {
+        max-height: 5rem;
+
+        @media(max-width: 991px) {
+            max-height: 3rem;
+        }
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            margin-bottom: 1.9rem;
+        }
+
+        a {
+            color: white;
+            font-size: 2rem;
+            font-weight: 500;
+
+            @media(max-width: 991px) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
